@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pizar</title>
+<script src="myScript.js"></script>
+</head>
+<body>
+
+<h1>PIZAR</h1>
+<p>A Raspberry Pi Zero Car</p>
+<p>
+<button type="button" onclick="pizar.connect(document.getElementById('ip').value)">
+  connect pizar @</button>
+<input type="text" id="ip" value="pizerocar.local">
+</p>
+<p> <button type="button" onclick="pizar.close()">close connection</button> </p>
+<p>
+<button type="button" onclick="pizar.led(document.getElementById('led').value)">
+  LED</button>
+<select id="led">
+<option value="toggle">toggle</option>
+<option value="off">off</option>
+<option value="on">on</option>
+</select>
+</p>
+<p>
+<button type="button" onclick="pizar.wheel(
+    document.getElementById('wheel').value,
+    document.getElementById('wheel_value').value
+  )">
+  Wheel</button>
+<select id="wheel">
+<option value="left">left</option>
+<option value="right">right</option>
+</select>
+<input type="number" id="wheel_value" value="0">%
+</p>
+<p>
+<button type="button" onclick="pizar.servo(
+    document.getElementById('servo').value,
+    document.getElementById('servo_value').value
+  )">
+  Servo</button>
+<select id="servo">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+</select>
+<input type="number" id="servo_value" value="1500">
+</p>
+<p>
+<button type="button"
+  onclick="request(document.getElementById('device').value)"
+>
+  request</button>
+<select id="device">
+<option value="button">button</option>
+<option value="floor sensors">floor sensors</option>
+<option value="left wheel counter">left wheel counter</option>
+<option value="right wheel counter">right wheel counter</option>
+<option value="sonar detector">sonar detector</option>
+</select>
+</p>
+<p>
+<button type="button" onclick="read()" id="read" disabled>read</button>
+<input type="text" value="message" id="message" disabled>
+</p>
+<p><button type="button" onclick="pizar.stop()">STOP</button></p>
+</body>
+</html> 
