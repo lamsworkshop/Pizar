@@ -6,7 +6,7 @@ index.js: copy it to scratch-vm/src/extensions/scratch3_pizar/
 
 pizar.png: copy it to scratch-gui/src/lib/libraries/extensions/pizar/
 
-pizar-small.png: copy it to scratch-gui/src/lib/libraries/extensions/pizar/
+pizar-small.svg: copy it to scratch-gui/src/lib/libraries/extensions/pizar/
 
 ## Modify Scratch Code
 ### scratch-vm/src/extension-support/extension-manager.js
