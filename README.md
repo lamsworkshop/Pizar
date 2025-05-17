@@ -14,7 +14,7 @@ add item to **builtinExtensions**:
 ```
 pizar: () => require('../extensions/scratch3_pizar')
 ```
-### scratch-gui/src/lib/library/extensions/index.jsx
+### scratch-gui/src/lib/libraries/extensions/index.jsx
 add import:
 ```
 import pizarIconURL from './pizar/pizar.png';
