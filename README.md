@@ -58,12 +58,15 @@ node.js and react.js
 $git clone https://github.com/scratchfoundation/scratch-gui.git --depth=1
 $git clone https://github.com/scratchfoundation/scratch-vm.git --depth=1
 **Modify Code**
+(remove some unused extensions if memory low)
 $cd scratch-vm/
 $npm install
 $npm link
 $cd ../scratch-gui/
 $npm install
 $npm link ../scratch-vm/
+($export NODE_OPTIONS=--max-old-space-size=1024)
 $npm start
+(http://192.168.50.192:8601/)
 ```
 
