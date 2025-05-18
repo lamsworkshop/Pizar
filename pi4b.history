@@ -1,0 +1,42 @@
+    1  sudo raspi-config
+    2  sudo apt update
+    3  sudo apt upgrade
+    4  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    5  \. "$HOME/.nvm/nvm.sh"
+    6  nvm install 22
+    7  npm install --global yarn
+    8  npm install -g npm@11.4.0
+    9  yarn global add react
+   10  mkdir scratch
+   11  cd scratch
+   12  git clone https://github.com/scratchfoundation/scratch-gui.git --depth=1
+   13  git clone https://github.com/scratchfoundation/scratch-vm.git --depth=1
+   14  cd scratch-vm/src/extensions/
+   15  ls
+   16  rm -rf scratch3_boost/ scratch3_microbit/ scratch3_ev3/ scratch3_wedo2/
+   17  mkdir scratch3_pizar
+   18  cd scratch3_pizar/
+   19  wget https://raw.githubusercontent.com/lamsworkshop/Pizar/refs/heads/main/index.js
+   20  vi index.js 
+   21  cd ~/scratch/scratch-gui/src/lib/libraries/extensions/
+   22  ls
+   23  rm -rf boost/ wedo2/ ev3/ microbit/
+   24  mkdir pizar
+   25  cd pizar/
+   26  wget https://github.com/lamsworkshop/Pizar/blob/main/pizar.png?raw=true -O pizar.png
+   27  wget https://raw.githubusercontent.com/lamsworkshop/Pizar/284bcc7c70fb5b71ce2600e78457be6fedc95a19/pizar-small.svg
+   28  ls
+   29  cd ~/scratch/
+   30  vi scratch-vm/src/extension-support/extension-manager.js 
+   31  vi scratch-gui/src/lib/libraries/extensions/index.jsx 
+   32  cd scratch-vm/
+   33  npm install
+   34  npm link
+   35  cd ../scratch-gui/
+   36  npm install
+   37  npm link ../scratch-vm/
+   38  npm start
+   39  export NODE_OPTIONS=--max-old-space-size=1024
+   40  npm start
+   41  cd
+   42  history > pi4b.history
